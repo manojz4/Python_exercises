@@ -1,0 +1,49 @@
+class Employee:
+    department_name = "Development"
+    
+    def __init__(self, emp_id, emp_salary, mgr_id):
+        self.emp_id = emp_id
+        self.emp_salary = emp_salary
+        self.mgr_id = mgr_id
+    
+    def get_emp_salary(self):
+        return self.emp_salary
+    
+    def set_emp_salary(self, rcv_salary):
+        self.emp_salary = rcv_salary
+    
+    @classmethod
+    def get_department_name(cls):
+        return cls.department_name
+    
+    @staticmethod
+    def field_expertise():
+        print("Just displays some expertise for all my employees")
+
+emp = Employee(500, 1000, 1)
+
+print("Employee id:", emp.emp_id)
+print("Employee salary:", emp.emp_salary)
+print("Manager id:", emp.mgr_id)
+
+print("Department name:", emp.get_department_name())
+
+emp.field_expertise()
+
+emp.set_emp_salary(2000)
+
+print("Modified Employee salary:", emp.get_emp_salary())
+
+del emp.emp_salary
+
+try:
+    print("Deleted employee salary:", emp.emp_salary)
+except AttributeError:
+    print("Employee salary attribute has been deleted")
+
+del emp
+
+try:
+    print("Deleted employee:", emp.get_emp_salary())
+except AttributeError:
+    print("Employee object has been deleted")

@@ -1,0 +1,30 @@
+# Create a class that captures airline tickets. 
+# Each ticket lists the departure and arrival cities, a flight number, and a seat assignment. 
+# A seat assignment has both a row and a letter for the seat within the row (such as 12F). 
+
+# main method:
+# Make two examples of tickets being sold to passengers.
+# display tickets booked details 
+###################
+class Ticket:
+    def __init__(self, departure, arrival, flight_number, seat_assignment):
+        self.departure = departure
+        self.arrival = arrival
+        self.flight_number = flight_number
+        self.seat_assignment = seat_assignment
+    
+    def display(self):
+        print("Ticket details:-------->")
+        print("Departure      : ", self.departure)
+        print("Arrival        : ", self.arrival)
+        print("Flight Number  : ", self.flight_number)
+        print("Seat Assignment: ", self.seat_assignment)
+
+
+ticket1 = Ticket("Nashik    -    NSK", "Dhule     -    DH", "123", "1A")
+ticket2 = Ticket("Nandurbar -    NDB", "Pune      -    PN" ,"456", "2A")
+
+print("Ticket 1:")
+ticket1.display()
+print("Ticket 2:")
+ticket2.display()
